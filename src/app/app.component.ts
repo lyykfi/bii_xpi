@@ -8,6 +8,7 @@ import { Result, ResultItem } from 'app/models/result';
 
 import euclidean from 'app/distance/euclidean';
 import minkowski from 'app/distance/minkowski';
+import canberra from 'app/distance/canberra';
 
 @Component({
     selector: 'app-root',
@@ -51,6 +52,9 @@ export class AppComponent  implements OnInit {
         const minkowskiResults = new Result();
         minkowskiResults.name = 'Minkowski';
 
+        const canberraResults = new Result();
+        canberraResults.name = 'Canberra';
+
         // euclidean
         this.vectors.forEach((item) => {
             const result = new ResultItem();
@@ -64,10 +68,17 @@ export class AppComponent  implements OnInit {
             mResult.result = minkowski(item.items, this.vector.items);
 
             minkowskiResults.results.push(mResult);
+
+            const cResult = new ResultItem();
+            cResult.name = item.name;
+            cResult.result = canberra(item.items, this.vector.items);
+
+            canberraResults.results.push(cResult);
         });
 
         newResult.push(euclideanResults);
         newResult.push(minkowskiResults);
+        newResult.push(canberraResults);
 
         console.log(newResult);
 
