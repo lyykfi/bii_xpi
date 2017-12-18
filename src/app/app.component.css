@@ -6,5 +6,12 @@
 .vectors-line .editable-vector {
     display: inline-block;
     vertical-align: top;
-    width: 30%;
+    width: 28%;
+}
+
+.calculates .method {
+    width: 20%;
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 1rem;
 }

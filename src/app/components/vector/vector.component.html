@@ -3,7 +3,7 @@
 <ul class="vector" [class.editable]="editable">
     <li *ngFor="let line of matrix; let i = index;">
         <ul class="line">
-            <li *ngFor="let item of line" [class.active]="item == '2'"></li>
+            <li *ngFor="let item of line; let j = index;" (click)="cellClick(i, j, item)" [class.active]="item == '2'"></li>
         </ul>
     </li>
 </ul>

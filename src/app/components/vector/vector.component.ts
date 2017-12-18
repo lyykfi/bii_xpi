@@ -12,8 +12,13 @@ export class VectorComponent {
 
     @Input() editable = false;
 
+    cellClick(i: number, j: number, value: number) {
+        const items = this.vector.items;
+
+        this.vector.items[(i * (items.length / 5)) + j] = value === 2 ? 1 : 2;
+    }
+
     get matrix(): Array<number>[] {
-        console.log(this.vector);
         if (this.vector) {
             const result = [];
             const separate = 5;

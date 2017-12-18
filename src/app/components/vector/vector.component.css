@@ -21,3 +21,7 @@
 .vector .line li.active {
     background: #666;
 }
+
+.vector.editable .line li {
+    cursor: pointer;
+}
