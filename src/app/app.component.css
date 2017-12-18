@@ -1,0 +1,10 @@
+.vectors-line .test-vectors {
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+}
+.vectors-line .editable-vector {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+}
