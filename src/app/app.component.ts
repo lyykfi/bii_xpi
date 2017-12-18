@@ -10,6 +10,7 @@ import euclidean from 'app/distance/euclidean';
 import minkowski from 'app/distance/minkowski';
 import canberra from 'app/distance/canberra';
 import chebyshev from 'app/distance/chebyshev';
+import scalar from 'app/distance/dot';
 
 @Component({
     selector: 'app-root',
@@ -59,6 +60,9 @@ export class AppComponent  implements OnInit {
         const chebyshevResults = new Result();
         chebyshevResults.name = 'Chebyshev';
 
+        const dotResult = new Result();
+        dotResult.name = 'Computes dot product and scalar';
+
         // euclidean
         this.vectors.forEach((item) => {
             const result = new ResultItem();
@@ -84,12 +88,19 @@ export class AppComponent  implements OnInit {
             chResult.result = chebyshev(item.items, this.vector.items);
 
             chebyshevResults.results.push(chResult);
+
+            const dResult = new ResultItem();
+            dResult.name = item.name;
+            dResult.result = scalar(item.items, this.vector.items);
+
+            dotResult.results.push(dResult);
         });
 
         newResult.push(euclideanResults);
         newResult.push(minkowskiResults);
         newResult.push(canberraResults);
         newResult.push(chebyshevResults);
+        newResult.push(dotResult);
 
         this.results = newResult;
     }

@@ -14,8 +14,6 @@ export default function minkowski( x, y ) {
             v = -v;
         }
         d += Math.pow( v, p );
-
-        console.log(d);
     }
 
     return Math.pow( d, 1 / p );
