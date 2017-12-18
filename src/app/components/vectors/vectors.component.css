@@ -1,8 +1,0 @@
-.vectors {
-    list-style: none;
-}
-
-.vectors > li {
-    display: inline-block;
-    padding-right: 2rem;
-}
